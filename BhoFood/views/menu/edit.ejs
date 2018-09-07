@@ -1,0 +1,29 @@
+<% include ../partials/header%>
+
+
+    <div class="row"></div>
+    
+    <h1 style ="text-align: center"> Edit <%= dish.name %></h1>
+    <div style="width: 30%; margin: 25px auto;">
+        <form action="/menu/<%= dish._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <input class="form-control" type="text" name ="name" value ="<%= dish.name %>">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="number" name ="price" value="<%= dish.price %>" min="0.25" step="0.25">
+            </div>
+            <div class="form-group">
+                <input type="file" id="image" name="image" accept="image/*">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name ="description" value ="<%= dish.description %>">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+            </div>
+        </form>
+        <a href="/menu">Back to Menu</a>
+    </div>
+    </div>
+
+<%include ../partials/footer%>
